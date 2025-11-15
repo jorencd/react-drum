@@ -1,38 +1,85 @@
-.App {
+/* Center the drum-machine on the screen */
+body {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+  background-color: #333333; /* Darker background for contrast */
+}
+
+#drum-machine {
+  width: 800px;
+  background-color: #494949;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 600px;
+  border-radius: 15px; /* Optional for rounded corners */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+#display {
+  font-size: 36px; /* Increased font size */
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #FF7043; /* Orange color for display text */
+}
+
+.drum-pads {
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.drum-pad {
+  background-color: #4CAF50;
   color: white;
+  font-size: 20px;
+  border: none;
+  padding: 30px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.drum-pad:hover {
+  background-color: #388E3C;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drum-pad:active {
+  background-color: #2C6B2F;
+}
+
+#volume-control {
+  margin-top: 20px;
+  width: 200px;
+}
+
+#volume-control input[type="range"] {
+  width: 100%;
+  background: #333;
+  height: 8px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#volume-control input[type="range"]:focus {
+  outline: none;
 }
